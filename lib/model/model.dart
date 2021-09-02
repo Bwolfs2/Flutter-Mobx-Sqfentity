@@ -11,16 +11,16 @@ const seqIdentity = SqfEntitySequence(
 );
 
 const tableUser = SqfEntityTable(
-    tableName: "user",
-    primaryKeyName: "id",
-    primaryKeyType: PrimaryKeyType.integer_auto_incremental,
-    useSoftDeleting: false,
-    fields: [
-      SqfEntityField("name",DbType.text),
-      SqfEntityField("email",DbType.text),
-      SqfEntityField("phone",DbType.text),
-      SqfEntityField("photo",DbType.text),
-    ]
+  tableName: "user",
+  primaryKeyName: "id",
+  primaryKeyType: PrimaryKeyType.integer_auto_incremental,
+  useSoftDeleting: false,
+  fields: [
+    SqfEntityField("name", DbType.text),
+    SqfEntityField("email", DbType.text),
+    SqfEntityField("phone", DbType.text),
+    SqfEntityField("photo", DbType.text),
+  ],
 );
 
 @SqfEntityBuilder(dbModel)
@@ -30,5 +30,4 @@ const dbModel = SqfEntityModel(
     databaseName: "teste.db",
     databaseTables: [tableUser],
     sequences: [seqIdentity],
-    bundledDatabasePath: null
-);
+    bundledDatabasePath: null);
